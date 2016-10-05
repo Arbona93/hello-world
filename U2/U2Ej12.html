@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 12</title>
+    <script type="text/javascript">
+      var fecha = new Date();
+      var diaNumerico = fecha.getDay();
+      var dia;
+      var resultado = 6 - diaNumerico;
+      switch (diaNumerico) {
+        case 0:
+       dia = "Domingo";
+       break;
+   case 1:
+       dia = "Lunes";
+       break;
+   case 2:
+       dia = "Martes";
+       break;
+   case 3:
+       dia = "Miercoles";
+       break;
+   case 4:
+       dia = "Jueves";
+       break;
+   case 5:
+       dia = "Viernes";
+       break;
+   case 6:
+       dia = "Sabado";
+
+          break;
+        default:
+
+      }
+      document.write("Hoy es " + dia + ", animo quedan " + resultado + " dias para el finde");
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

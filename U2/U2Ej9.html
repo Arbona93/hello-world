@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 9</title>
+    <script type="text/javascript">
+      var miAño;
+      var resultado;
+      miAño = prompt("Escribe aqui tu año de nacimiento");
+      var d = new Date();
+      var n = d.getFullYear();
+      var edad = n - miAño;
+      function mayorMenor(edad){
+        if (edad < 18) {
+          return "menor";
+        }else {
+          return "mayor";
+        }
+      }
+      resultado = mayorMenor(edad);
+      </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.write("Eres "+ resultado + " de edad</br>");
+      if (resultado == "mayor") {
+        document.write("Entra en la siguiente web")
+      }
+    </script>
+  </body>
+</html>

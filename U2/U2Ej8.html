@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8</title>
+    <script type="text/javascript">
+      var miNumero;
+      var resultado;
+      miNumero = prompt("Escribe aqui el numero que quieres saber si es par o impar");
+
+      function parImpar(miNumero){
+        if (miNumero % 2 == 0) {
+          return "par";
+        }else {
+          return "impar";
+        }
+      }
+      resultado = parImpar(miNumero);
+      </script>
+  </head>
+  <body>
+    <script type="text/javascript">
+      document.write("El numero "+ miNumero +" es "+ resultado);
+    </script>
+  </body>
+</html>

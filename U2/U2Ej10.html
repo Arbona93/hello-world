@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 10</title>
+    <script type="text/javascript">
+    var miNumero;
+    var resultado;
+    miNumero = prompt("Escribe aqui un numero entre 1 y 10 para empezar una cuenta atras");
+    if (miNumero <= 10) {
+      if (miNumero >= 1) {
+        while (miNumero != (-1)) {
+          document.write(miNumero+"</br>");
+          miNumero = miNumero - 1;
+        }
+      } else {
+        document.write("El numero introducido no esta dentro del rango pedido, actualiza la pagina y vuelve a introducir un numero valido");
+      }
+    } else {
+        document.write("El numero introducido no esta dentro del rango pedido, actualiza la pagina y vuelve a introducir un numero valido");
+    }
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>
