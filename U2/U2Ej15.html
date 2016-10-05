@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 15</title>
+
+  </head>
+  <body>
+
+    <p id="diasSemanales"></p>
+    <script type="text/javascript">
+function mostrarDias() {
+    var texto = "";
+    var i;
+      var diasSemana = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"];
+      for (var i = 0; i < diasSemana.length; i++) {
+        texto += diasSemana[i] + "<br>";
+      }
+      document.getElementById("diasSemanales").innerHTML = texto;
+    }
+function diasATexto(){
+  var dia;
+  var diaNumerico;
+  diaNumerico = prompt ("Introduce el dia de la semana que quieres que se muestre");
+  var diaNum = diaNumerico - 0;
+  if (isNaN(diaNum)) {
+        document.write("El numero introducido no es numerico");
+      }
+      else {
+        if (isFinite(diaNum)) {
+  switch (diaNum) {
+    case 0:
+   dia = "Domingo";
+   break;
+case 1:
+   dia = "Lunes";
+   break;
+case 2:
+   dia = "Martes";
+   break;
+case 3:
+   dia = "Miercoles";
+   break;
+case 4:
+   dia = "Jueves";
+   break;
+case 5:
+   dia = "Viernes";
+   break;
+case 6:
+   dia = "Sabado";
+      break;
+    default:
+
+  }
+  document.write("El numero introducido corresponde al " + dia + "</br>");
+}else {
+  document.write("El numero introducido es infinito");
+}
+}
+}
+diasATexto();
+mostrarDias();
+    </script>
+
+  </body>
+</html>
