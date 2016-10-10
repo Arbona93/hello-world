@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>kiosko</title>
+    <script type="text/javascript">
+        var indiceProducto;
+        var productos = ["Pipas", "Papas", "Refescos", "Agua","Periodico"];
+        function generaSurtido() {
+          return productos;
+            }
+        function consultaPrecios(indiceProducto) {
+          var precios=[0.50,0.25,1,0.50,1.20];
+          switch (indiceProducto) {
+            case 0:
+              return precios[0];
+              break;
+            case 1:
+              return precios[1];
+              break;
+            case 2:
+              return precios[2];
+              break;
+            case 3:
+              return precios[3];
+              break;
+            case 4:
+              return precios[4];
+              break;
+          }
+        }
+        function mostrarSurtido(consultaPrecios){
+          for (var i = 0; i < productos.length; i++) {
+          document.write(productos[i]
+        + " " + consultaPrecios(i) + "€<br>");
+        }
+        }
+    </script>
+  </head>
+  <body>
+    <p align="center">
+  ¿Quieres conocer el surtido? Pulsa sobre la imagen<br><br>
+  <img src="imagenKiosko.jpg" onclick="mostrarSurtido(consultaPrecios)"/>
+</p>
+  </body>
+</html>
