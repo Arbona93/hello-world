@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U3. Practica1Ej2</title>
+    <script type="text/javascript">
+    var letras = new Array('a', 'b', 'c','d','e','f','g','h','i','j','k','l','m','n','ñ','o','p','q','r','s','t','u','v','x','y','z');
+    var letra = letras[Math.floor(Math.random()*letras.length)];
+    var errores = new Array();
+
+      function comparaLetra(){
+        var palabras = new Array();
+        palabras = formulario.area.value.split(" ");
+        var ventana = window.open("","","width=400,height=200");
+        var contador = 0;
+        ventana.document.write('<meta charset="utf-8">');
+        for (var i = 0; i < palabras.length; i++) {
+          if (palabras[i].charAt(0)==letra) {
+            contador = contador + 1;
+          }else {
+            errores.push(palabras[i]);
+        }
+      }if (contador < palabras.length) {
+        ventana.document.write('Has perdido!, tienes errores: '+ errores);
+      }else {
+        ventana.document.write('Enhorabuena! has conseguido ' + contador + 'puntos');
+      }
+      }
+    </script>
+    <style media="screen">
+      textarea, input{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Manipular Array</h1>
+  <form name="formulario">
+
+    <script type="text/javascript">
+      document.write('Introduce algunas palabras que empiezen por: '+letra);
+    </script>
+    <textarea name="area" rows="3" cols="40"></textarea>
+    <input type="button" name="boton" value="Aceptar" onclick="comparaLetra()">
+  </form>
+  </body>
+</html>

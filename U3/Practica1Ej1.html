@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>U3. Practica1</title>
+    <script type="text/javascript">
+      function contarPalabras(){
+        var palabras = new Array();
+        palabras = formulario.area.value.split(" ");
+        var ventana = window.open("","","width=400,height=200");
+        var larga;
+        var corta;
+        for (var i = 1; i < palabras.length; i++) {
+          if (palabras[i].length > palabras[i-1].length) {
+            larga = palabras[i];
+          }else {
+            if (palabras[0].length > palabras[i].length) {
+              larga = palabras[0];
+            }
+          }
+        }
+        for (var i = 1; i < palabras.length; i++) {
+          if (palabras[i].length < palabras[i-1].length) {
+            corta = palabras[i];
+          }else {
+            if (palabras[0].length < palabras[i].length) {
+              corta = palabras[0];
+            }
+          }
+        }
+        ventana.document.write('<meta charset="utf-8">');
+        ventana.document.write('<b>Primera palabra: </b>'+ palabras[0]+"</br>");
+        ventana.document.write('<b>Última palabra: </b>'+palabras[(palabras.length)-1]+"</br>");
+        ventana.document.write('<b>La palabra más larga: </b>' + larga + "</br>");
+        ventana.document.write('<b>La palabra más corta: </b>' + corta + "</br>");
+        var listado = palabras.sort().join(' - ');
+        ventana.document.write('<b>Listado por orden alfabético: ' + listado + "</br>");
+        ventana.document.write('<b>Número de palabras: ' + palabras.length);
+      }
+    </script>
+    <style media="screen">
+      textarea, input{
+        display: block;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding-left: 2px;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>Manipular Array</h1>
+  <form name="formulario">
+    <p>Introduce algunas palabras:</p>
+    <textarea name="area" rows="3" cols="40"></textarea>
+    <input type="button" name="boton" value="Aceptar" onclick="contarPalabras()">
+  </form>
+  </body>
+</html>
