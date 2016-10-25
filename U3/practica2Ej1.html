@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<title>Practica2 Ejercicio1</title>
+<style type="text/css">
+h1 {text-align: center}
+#cronometro {text-align: center}
+</style>
+<script type="text/javascript">
+var marcha=0;
+var diferencia=0;
+var ventana;
+
+function empezar() {
+          emp=new Date();
+           if (marcha==0) {
+            marcha=1;
+            ventana= window.open("","","width=400,height=200");
+            }
+        elcrono=setInterval(contar,1000);
+         }
+function formatear(){
+  if (h<10) {h="0"+h;}
+  if (s<10) {s="0"+s;}
+  if (m<10) {m="0"+m;}
+}
+function contar() {
+         actual=new Date();
+         diferencia=actual-emp;
+         var crono=new Date();
+         crono.setTime(diferencia);
+         s=crono.getSeconds();
+         m=crono.getMinutes();
+         h=crono.getHours()-1;
+         formatear();
+         ventana.document.body.innerHTML=h+" : "+m+" : "+s;
+         }
+function reiniciar() {
+         if (marcha==1) {
+            clearInterval(elcrono);
+            }
+           diferencia=0;
+         ventana.document.body.innerHTML = "00 : 00 : 00";
+         }
+</script>
+</head>
+<body>
+<h1>Cronómetro</h1>
+<div id="cronometro">
+    <input type="button" value="Contar" name="empieza" onclick="empezar()"/>
+    <input type="button" value="Parar" name="para" onclick="reiniciar()"/><br/>
+</div>
+</body>
+</html>

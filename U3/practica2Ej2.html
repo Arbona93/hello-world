@@ -1,0 +1,110 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+  <meta charset="utf-8">
+<title>Practica2 Ejercicio2</title>
+<style type="text/css">
+h1 {text-align: center}
+#cronometro {text-align: center}
+</style>
+<script type="text/javascript">
+var marcha=0;
+var diferencia=0;
+var ventana;
+var horas2 = 0;
+var minutos2 = 0;
+var segundos2 = 0;
+function empezar() {
+            emp=new Date();
+         if (marcha==0) {
+            marcha=1;
+            ventana= window.open("","","width=400,height=200");
+            }
+            elcrono=setInterval(contar,1000);
+         }
+function formatear(){
+  if (horas<10) {horas="0"+horas;}
+  if (segundos<10) {segundos="0"+segundos;}
+  if (minutos<10) {minutos="0"+minutos;}
+  }
+function formatearResul(){
+  if (horasR<10){horasR = "0" + horasR;}
+  if (segundosR<10){segundosR = "0" + segundosR;}
+  if (minutosR<10){minutosR = "0" + minutosR;}
+}
+function contar() {
+         if (marcha == 1) {
+           actual=new Date();
+           diferencia=actual-emp;
+           crono=new Date();
+           crono.setTime(diferencia);
+           segundos=crono.getSeconds();
+           minutos=crono.getMinutes();
+           horas=crono.getHours()-1;
+           if (marcha == 1) {
+             horas2 = horas;
+             minutos2 = minutos;
+             segundos2 = segundos;
+           }
+           formatear();
+           ventana.document.body.innerHTML=horas+" : "+minutos+" : "+segundos;
+         }else {
+           actual=new Date();
+           diferencia=actual-emp;
+           crono=new Date();
+           crono.setTime(diferencia);
+           segundos3=crono.getSeconds();
+           minutos3=crono.getMinutes();
+           horas3=crono.getHours()-1;
+           if (marcha==2) {
+             segundosR = segundos2 + segundos3;
+             minutosR = minutos2 + minutos3;
+             horasR = horas2 + horas3;
+             segundosResultado = segundosR;
+             minutosResultado = minutosR;
+             horasResultado = horasR
+           }
+           if (marcha == 3) {
+             segundosR = segundos3 + segundosResultado;
+             minutosR = minutos3 + minutosResultado;
+             horasR = horas3 + horasResultado;
+             segundos2 = segundosR;
+             minutos2 = minutosR;
+             horas2 = horasR;
+           }
+           formatearResul();
+           ventana.document.body.innerHTML=horasR+" : "+minutosR+" : "+segundosR;
+
+         }
+        }
+function reiniciar() {
+         if (marcha!=0) {
+            clearInterval(elcrono);
+            marcha=0;
+            }
+         diferencia=0;
+         ventana.document.body.innerHTML = "00 : 00 : 00";
+         }
+function parar(){
+  if (marcha == 2 || marcha==3){
+    clearInterval(elcrono);
+     marcha=3;
+  }
+  if (marcha==1) {
+     clearInterval(elcrono);
+     marcha=2;
+     }
+  diferencia=0;
+}
+</script>
+</head>
+<body>
+<h1>Cronómetro</h1>
+<div id="cronometro">
+    <input type="button" value="Reiniciar" onclick="reiniciar()"/>
+    <input type="button" value="Contar" onclick="empezar()"/>
+    <input type="button" value="Parar" onclick="parar()"/><br/>
+</div>
+</body>
+</html>
