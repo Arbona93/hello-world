@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Crea elementos del DOM</title>
+    <script type="text/javascript">
+      function creaDOM(){
+        var body = document.body;
+        var h1 = document.createElement("h1");
+        h1.innerHTML = "Esto es el titular";
+        body.appendChild(h1);
+        var img = document.createElement("img");
+        img.src = "http://www.tenvinilo.com/vinilos-decorativos/img/preview/vinilo-decorativo-escudo-valencia-cf-537.png";
+        body.appendChild(img);
+      }
+    </script>
+</head>
+<body onload="creaDOM()">
+</body>
+</html>
