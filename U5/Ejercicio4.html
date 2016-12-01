@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Ejercicio 4</title>
+<style type="text/css">
+body{
+	border: 1px solid;
+	height:300px;
+	width:800px;
+}
+</style>
+<script type="text/javascript">
+function position(event){
+if (event.shiftKey == true) {
+	var x = event.clientX;
+	var y = event.clientY;
+	console.log("X: "+x+", Y: "+y);
+}
+}
+</script>
+</head>
+<body onmousemove="position(event);">
+</body>
+</html>

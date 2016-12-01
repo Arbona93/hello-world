@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 5</title>
+    <style media="screen">
+
+    </style>
+    <script type="text/javascript">
+      onload = function (){
+        titulo.onmousewheel = function (){
+          var tamaño = titulo.style.fontSize;
+          if (titulo.style.fontSize == "") {
+              tamaño = "24px";
+          }
+          var texto = tamaño.substr(0,2);
+          var tamaño2 = parseInt(texto);
+          var texto2 = texto*2;
+          titulo.style.fontSize = texto2+"px";
+
+        }
+        imagen.onmousewheel = function(){
+          imagen.width = imagen.width * 2;
+        }
+
+      }
+    </script>
+  </head>
+  <body>
+  <h1 id="titulo" style="font-size = 24px">Este es el título</h1>
+  <img id="imagen" src="img1.jpg" width="200px">
+  </body>
+</html>
