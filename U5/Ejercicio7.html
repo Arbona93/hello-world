@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 7</title>
+    <script type="text/javascript">
+      document.addEventListener("keydown", function (event){
+        var especial = event.altKey || event.ctrlKey || event.shiftKey || event.metaKey;
+        document.getElementById('texto').innerHTML = "La tecla pulsada es: "+ String.fromCharCode(event.keyCode);
+        if (especial == true) {
+          document.getElementById('texto2').innerHTML ="La tecla pulsada es especial";
+        }else {
+          document.getElementById('texto2').innerHTML ="La tecla pulsada no es especial";
+        }
+      })
+    </script>
+  </head>
+  <body>
+    <h1 id="texto">Pulsa una tecla para saber si es un carácter especial</h1>
+    <h1 id="texto2"></h1>
+  </body>
+</html>

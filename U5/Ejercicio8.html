@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 8</title>
+    <script type="text/javascript">
+      var cont = 0;
+      var texto2;
+      function cambiarTexto(event){
+        if (cont == 0) {
+          if (event.shiftKey == true) {
+            texto.style.textTransform = "uppercase"
+            cont = 1;
+          }
+         }else {
+           texto.style.textTransform = "lowercase"
+           cont = 0;
+         }
+      }
+    </script>
+  </head>
+  <body onkeydown="cambiarTexto(event)">
+    <h1 id="texto">pulsa shift para cambiar este texto a mayusculas/minusculas</h1>
+  </body>
+</html>

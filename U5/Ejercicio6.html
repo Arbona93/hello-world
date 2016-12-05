@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ejercicio 6</title>
+    <script type="text/javascript">
+      document.addEventListener("keydown", function (event){
+        document.getElementById('texto').innerHTML = "La tecla "+String.fromCharCode(event.keyCode)+" tiene el código: "+event.keyCode;
+      })
+    </script>
+  </head>
+  <body>
+    <h1 id="texto">Pulsa una tela para ver su código</h1>
+  </body>
+</html>
